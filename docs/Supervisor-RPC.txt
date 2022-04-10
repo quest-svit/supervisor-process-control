@@ -1,0 +1,10 @@
+Supervisor XML-RPC API calls to start/stop processes
+
+curl -d "<?xml version='1.0'?><methodCall><methodName>start_apps</methodName></methodCall>" http://localhost:6610/app_rpc
+
+curl -s -H "Content-type: application/txt" -d "<methodCall><methodName>supervisor.stopAllProcesses</methodName></methodCall>" http://localhost:6610/RPC2 -K- <<<"--user ${FID_USER}:${FID_PASS}" > /dev/null
+
+
+
+curl -s -H "Content-type: application/txt" -d "<methodCall><methodName>supervisor.startProcessGroup</methodName><params><param><value>nameofProcess</value></param></params> </methodCall>" http://localhost:6610/RPC2 -K- <<<"--user ${FID_USER}:${FID_PASS}" > /dev/null
+
